@@ -1,0 +1,48 @@
+﻿@* @{
+    ViewBag.Title = "Bulk Mail Sender";
+}
+
+<h2>Bulk Email Sender</h2>
+
+@using (Html.BeginForm("SendMails", "Mail", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        <label>CSV File (Name,Email):</label>
+        <input type="file" name="file" accept=".csv" required />
+    </div>
+    <div>
+        <label>Email Subject:</label>
+        <input type="text" name="subject" class="form-control" required />
+    </div>
+    <div>
+        <label>Email Content (use &lt;&gt; for name):</label>
+        <textarea name="content" class="form-control" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+} *@
+
+
+@{
+    ViewBag.Title = "Live Bulk Mail Sender";
+}
+
+<h2>Live Bulk Mail Sender</h2>
+
+<form id="mailForm" enctype="multipart/form-data">
+    <div>
+        <label>CSV File (name,email):</label>
+        <input type="file" name="file" accept=".csv" required />
+    </div>
+    <div>
+        <label>Email Subject:</label>
+        <input type="text" name="subject" required />
+    </div>
+    <div>
+        <label>Email Content (use <> for name):</label>
+        <textarea name="content" rows="5" required></textarea>
+    </div>
+    <button type="submit">Send</button>
+</form>
+
+
+
